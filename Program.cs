@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DungeonExplorer
+class Program
 {
-    internal class Program
+
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Game game = new Game();
-            game.Start();
-            Console.WriteLine("Waiting for your Implementation");
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
-        }
+        Game game = new Game();
+        game.StartGame();
+        game.GameLoop();
     }
 }
