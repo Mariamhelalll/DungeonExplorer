@@ -42,27 +42,33 @@ public class Player
 
     public string Inventory
     {
-        get {return inventory.Count >0 ? string.Join("," , inventory) :"Empty";} // Read only property to return a formatted string if item is not empty.
+        // encapsulation : ensures direct modification is not possible outside the class.
+        get {return inventory.Count >0 ? string.Join("," , inventory.Select(item=>$"\"{item}\"")) :"Empty";} // Read only property to return a formatted string if item is not empty.
 
     }
-
-    public void PickUPItem(string item , Room room)
+     
+     // Method to pick up item from the room.
+    public void PickUpItem(string item , Room room)
     {
         Debug.Assert(room!= null ,"Room can not be unidentified");
-        Debug.Assert(item!=null , "Item can not be unidentified");
+        Debug.Assert(!string.IsNullOrWhiteSpace(item), "Item can not be unidentified");
         
-        if (!string.IsNullOrWhiteSpace(item))
+        if (!string.IsNullOrWhiteSpace(room.Item))
         {
-            inventory.Add(item);
-            Console.WriteLine($"You picked up an {item}");
+            
+            inventory.Add(room.Item);
+            Console.WriteLine($"You picked up a {item}");
             room.DiscardItem();
+        }    
+
+        else
+        {
+            Console.WriteLine("No item to pick from  this room!");
+        
             
         }
         
-        else
-        {
-            Console.WriteLine("No item to pick from this room!";)
-        }
+        
     }
 
     //Additional method to release item
