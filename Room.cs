@@ -2,25 +2,68 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-
-public class Room // encapsulates attributes and methods
+ 
+namespace DungeonExplorer
 {
-    public string Description {get; private set;}
-    public string Item {get; private set;}
+    ///<summary>
+    ///Represents a room in the game , containing a description and an optional item.
+    ///</summary>
 
-    public Room (string description, string item="")
+    public class Room // encapsulates attributes and methods
     {
-        Debug.Assert(!string.IsNullOrWhiteSpace(description),"Room Description can not be empty!");// ensures descrption is not empty , therefore preventing any invalid object status.
+        ///<summary>
+        ///receives a room description
+        ///</summary>
+        public string Description {get; private set;}
+        ///<summary>
+        /// receives the item available in the room. Empty string is left if no item is available in the room.
+        public string Item {get; private set;}
 
-        Description= description;
-        Item = item ?? ""; // if item is null/empty, the item is replaced with an empty string "", preventing any runtime errors.
-    }
+        ///<summary>
+        ///Initialzes a new instance of the Room class
+        ///</summary>
+        /// <param "description"> A description of the room's details.</param>
+        /// <param "item"> Reprensents an optional item available in the room (default is an empty string).</param>
+        /// <exception "Argument Exception"> Conducted if the <paramref "description"/> is null or whitespace.</exception>
 
-    // Additional method to remove item once it is picked up 
+        public Room (string description, string item="")
+       {
+         Debug.Assert(!string.IsNullOrWhiteSpace(description),"Room Description can not be empty!");// ensures descrption is not empty , therefore preventing any invalid object status.
+        
+         Description= description;
+         Item = item ?? ""; // if item is null/empty, the item is replaced with an empty string "", preventing any runtime errors.
+       }
 
-    public void DiscardItem() // Ensures data encapsulation and integrity
-    {
-        Item =""; 
-    }
+       ///<summary>
+       /// Discards the current item in the room
+       ///</summary>
+       /// <remarks>
+       /// Ensures data encapsulation and integrity by resetting the item to an empty string while discarding it.
+       ///</remarks>
+
+
+       public void DiscardItem() 
+       {
+         Item =""; 
+       }
+
+       public void AddItem (string item)
+       {
+         if (!Items.Contain(item))
+            { 
+              Items.Add(item);
+              Console.WriteLine($"{item} has been added to your room.");
+
+            }
+         else
+            {
+               Console.WriteLine($"{item} already exits in this room");
+            }   
+         
+       }
+
+    } 
+
 
 }
+

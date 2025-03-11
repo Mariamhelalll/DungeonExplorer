@@ -2,14 +2,32 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using DungeonExplorer;
 
-class Program
+namespace DungeonExplorer
 {
-
-    static void Main(string[] args)
+    ///<summary>
+    ///Main entry point fot the game.
+    ///</summary>
+    class Program
     {
-        Game game = new Game();
-        game.StartGame();
-        game.GameLoop();
+      ///<summary>
+      /// Main method that starts the game and initializes it
+      ///<param "args"> Command-line argument(not used in application)</param>
+        
+        
+    
+        static void Main(string[] args)
+        {  
+            //instantiate and starts the game
+            Game game = new Game();
+            game.StartGame(); // initializes the game and rooms
+            game.GameLoop(); // runs game loop
+        }
+
+    
+
+        
     }
+
 }
