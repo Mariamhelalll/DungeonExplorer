@@ -47,21 +47,7 @@ namespace DungeonExplorer
          Item =""; 
        }
 
-       public void AddItem (string item)
-       {
-         if (!Items.Contain(item))
-            { 
-              Items.Add(item);
-              Console.WriteLine($"{item} has been added to your room.");
-
-            }
-         else
-            {
-               Console.WriteLine($"{item} already exits in this room");
-            }   
-         
-       }
-
+       
     } 
 
 

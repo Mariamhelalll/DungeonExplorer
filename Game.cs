@@ -76,7 +76,7 @@ namespace DungeonExplorer
                Room thisRoom = rooms[presentRoomIndicator];
 
                Console.WriteLine("\n" + thisRoom.Description);
-               Console.WriteLine("Options : (1) Pick up item , (2) Check status , (3) Release item , (4) Move to the next room , (5) Accept damage , (6) Heal from damage , (7) Exit , (8) Move to previous room, (9) Add item to this room");
+               Console.WriteLine("Options : (1) Pick up item , (2) Check status , (3) Release item , (4) Move to the next room , (5) Accept damage , (6) Heal from damage , (7) Exit , (8) Move to previous room.");
                Console.WriteLine("Please choose an option from the above! : ");
                string option = Console.ReadLine()?.Trim();
                if (string.IsNullOrWhiteSpace(option))
@@ -155,13 +155,7 @@ namespace DungeonExplorer
                       break;
                     }
 
-                  case "9":
-                  {
-                    Console.Write("Please enter the item you wish to add to this room : ")
-                    string itemToAdd= Console.ReadLine()?.Trim().ToLower();
-                    thisRoom.AddItem(itemToAdd);
-                    break;
-                  }  
+                  
                 }
             
 
