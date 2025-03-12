@@ -52,9 +52,9 @@ namespace DungeonExplorer
         {
            rooms= new List<Room>
             {
-               new Room(" Room number 1 : A dark,mysterious dungeon room with a sword on the ground.","Sword"),
-               new Room (" Room number 2 : A creepy corridor with a shield in the wall.", "Shield"),
-               new Room (" Room number 3 : A treasure hall filled with gold with a potion glowing on the table.","Potion"),
+               new Room(" Room number 1 : A dark,mysterious dungeon room with a sword on the ground.","sword"),
+               new Room (" Room number 2 : A creepy corridor with a shield in the wall.", "shield"),
+               new Room (" Room number 3 : A treasure hall filled with gold with a potion glowing on the table.","potion"),
                new Room(" Room number 4 : A compact room with a monster sneaking.","")
 
             };
