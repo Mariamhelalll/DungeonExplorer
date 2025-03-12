@@ -169,7 +169,7 @@ namespace DungeonExplorer
 
      ///<summmary>
      /// moves the player to the following room if available.
-     ///prints a message if no more rooms are avaialable.
+     ///prints a message if no more rooms are available.
      ///</summary> 
 
      private void MoveToFollowingRoom()
