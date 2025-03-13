@@ -88,7 +88,7 @@ namespace DungeonExplorer
             
                inventory.Add(room.Item);
                Console.WriteLine($"You picked up a {item.ToLower()}");
-               room.DiscardItem();
+               room.DiscardItem();// Removes item from the room
             }    
 
           else
